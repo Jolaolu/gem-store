@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+@import "utils/_variables";
+
+@import "utils/mixins";
+
+@import "utils/reset";
+
+body {
+    font-family: $font-primary;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+    background-color: $white;
+    overflow-x: hidden;
+    color: $primary-text-color;
+    transition: background 0.3s ease-out;
+}
+
+button{
+    cursor: pointer;
+    &:disabled{
+        cursor: not-allowed;
+    }
+}
+.hidden{
+    display: none;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+		transition-timing-function: linear !important;
+	}
+}
