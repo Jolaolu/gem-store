@@ -1,5 +1,5 @@
 [build]
-  Command = "yarn style && vue-cli-service build"
+  Command = "vue-cli-service build"
   Publish = "dist"
 
 [[redirects]]

@@ -64,7 +64,7 @@
         </div>
       </article>
       <article class="dashboard__report">
-        <chart />
+        <bar-chart />
       </article>
     </section>
   </div>
@@ -73,7 +73,7 @@
 export default {
   components: {
     'base-button': () => import('@/components/base-button'),
-    chart: () => import('@/components/chart')
+    'bar-chart': () => import('@/components/bar-chart')
   }
 }
 </script>
