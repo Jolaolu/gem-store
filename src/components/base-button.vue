@@ -18,7 +18,11 @@ export default {
   padding: 1rem;
   border: 1px solid $primary-color;
   @include screen(large) {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  @include screen(larger) {
+    font-size: 1.5rem;
     font-weight: 700;
   }
 }

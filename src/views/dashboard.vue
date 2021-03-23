@@ -17,7 +17,9 @@
           </div>
         </article>
         <article class="dashboard__order-details">
-          <div class="dashboard__order-details__circle"></div>
+          <div class="dashboard__order-details__circle">
+            <pie-chart />
+          </div>
           <div class="dashboard__order-details__current">
             <h6>Current Inventory</h6>
             <div>
@@ -64,6 +66,10 @@
         </div>
       </article>
       <article class="dashboard__report">
+        <div class="dashboard__report-header">
+          <h6 class="dashboard__trending-header">Total gifts sent this year</h6>
+           <base-button title="Download report"></base-button>
+        </div>
         <bar-chart />
       </article>
     </section>
@@ -73,21 +79,23 @@
 export default {
   components: {
     'base-button': () => import('@/components/base-button'),
-    'bar-chart': () => import('@/components/bar-chart')
+    'bar-chart': () => import('@/components/bar-chart'),
+    'pie-chart': () => import('@/components/pie-chart')
   }
 }
 </script>
 <style lang="scss" scoped>
 .dashboard {
-  @include screen (custom, max, 576){
+  padding-bottom: 4rem;
+  @include screen(custom, max, 576) {
     padding: 2rem;
   }
   &__welcome {
     font-weight: 600;
     font-size: 2rem;
-     margin-bottom: 2rem;
+    margin-bottom: 2rem;
     color: $primary-color;
-    @include screen (menner){
+    @include screen(menner) {
       margin-bottom: 4rem;
       font-size: 4rem;
     }
@@ -131,21 +139,17 @@ export default {
         }
         div {
           display: flex;
+          align-items: flex-end;
           justify-content: space-around;
-          @include screen (medder){
+          @include screen(medder) {
             align-items: flex-start;
           }
         }
       }
       &__circle {
-        width: 10rem;
-        height: 10rem;
-        border-radius: 100%;
-        border: 1rem solid $secondary-color;
-        @include screen(larger) {
-          width: 15vh;
-          height: 15vh;
-        }
+        width: 45%;
+        display: flex;
+        align-items: center;
       }
       &__current {
         @include screen(large) {
@@ -185,10 +189,11 @@ export default {
     }
   }
   &__trending {
+    display: flex;
     &-images {
       display: flex;
       width: 70%;
-      @include screen (menner){
+      @include screen(menner) {
         width: 80%;
       }
       @include screen(custom, max, 1441px) {
@@ -200,7 +205,7 @@ export default {
         display: flex;
         align-items: center;
         button {
-          @include screen (menner){
+          @include screen(menner) {
             width: 18%;
           }
         }
@@ -217,7 +222,12 @@ export default {
     }
   }
   &__report {
-    height: 50vh;
+    min-height: 50vh;
+    &-header{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
   }
 }
 h6 {
@@ -233,8 +243,8 @@ article {
   margin-top: 2.5rem;
   padding: 2rem 1rem;
   border: 1px solid #c4c4c4;
-  @include screen (menner){
-      padding: 3rem 2rem;
+  @include screen(menner) {
+    padding: 3rem 2rem;
   }
 }
 </style>

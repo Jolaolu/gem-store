@@ -1,71 +1,57 @@
 <template>
-  <div class="chart">
-    <apexchart
-      height="100%"
-      width="100%"
-      type="bar"
-      id="tokenChart"
-      :series="series"
-      :options="options"
-    />
-  </div>
+  <section class="chart">
+    <bar-chart :data="data" :options="options" />
+  </section>
 </template>
 <script>
-import VueApexCharts from 'vue-apexcharts'
+import BarChart from '@/plugins/chartjs/bar-chart'
 export default {
   components: {
-    apexchart: VueApexCharts
+    BarChart
   },
   data () {
     return {
-      oneYear: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ],
-      options: {
-        chart: {
-          id: 'vuechart-example'
-        },
-        xaxis: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-          ]
-        }
+      data: {
+        labels: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec'
+        ],
+        datasets: [
+          {
+            label: 'Data One',
+            backgroundColor: '#c4c4c4',
+            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+          }
+        ]
       },
-      series: [
-        {
-          name: 'series-1',
-          data: [300, 400, 450, 500, 490, 100, 200, 900, 380, 490, 780, 650]
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          display: false
         }
-      ]
+      }
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
-.chart{
+.chart {
   height: 100%;
   width: 100%;
 }
 </style>
+{
+
+},
