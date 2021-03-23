@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="chart">
     <apexchart
       height="100%"
       width="100%"
@@ -12,7 +12,6 @@
 </template>
 <script>
 import VueApexCharts from 'vue-apexcharts'
-// import dayjs from 'dayjs'
 export default {
   components: {
     apexchart: VueApexCharts
@@ -38,17 +37,35 @@ export default {
           id: 'vuechart-example'
         },
         xaxis: {
-          type: 'datetime',
-          categories: this.oneYear
+          categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+          ]
         }
       },
       series: [
         {
           name: 'series-1',
-          data: [30, 40, 45, 50, 49, 60, 70, 91]
+          data: [300, 400, 450, 500, 490, 100, 200, 900, 380, 490, 780, 650]
         }
       ]
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+.chart{
+  height: 100%;
+  width: 100%;
+}
+</style>

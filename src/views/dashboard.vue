@@ -64,7 +64,7 @@
         </div>
       </article>
       <article class="dashboard__report">
-        <chart/>
+        <chart />
       </article>
     </section>
   </div>
@@ -79,19 +79,28 @@ export default {
 </script>
 <style lang="scss" scoped>
 .dashboard {
+  @include screen (custom, max, 576){
+    padding: 2rem;
+  }
   &__welcome {
     font-weight: 600;
-    font-size: 4rem;
-    margin-bottom: 4rem;
+    font-size: 2rem;
+     margin-bottom: 2rem;
     color: $primary-color;
+    @include screen (menner){
+      margin-bottom: 4rem;
+      font-size: 4rem;
+    }
   }
   &__content {
     width: 100%;
   }
   &__order {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
+    @include screen(medder) {
+      display: flex;
+      justify-content: space-between;
+    }
     &-details {
       width: 100%;
       display: flex;
@@ -114,7 +123,7 @@ export default {
       &__average {
         width: 55%;
         padding-left: 0.5rem;
-        @include screen(larger) {
+        @include screen(large) {
           padding-left: 2rem;
         }
         h6 {
@@ -122,7 +131,10 @@ export default {
         }
         div {
           display: flex;
-          align-items: flex-start;
+          justify-content: space-around;
+          @include screen (medder){
+            align-items: flex-start;
+          }
         }
       }
       &__circle {
@@ -136,7 +148,7 @@ export default {
         }
       }
       &__current {
-        @include screen(larger) {
+        @include screen(large) {
           display: inline-grid;
           display: -ms-inline-grid;
           display: -moz-inline-grid;
@@ -151,32 +163,46 @@ export default {
       h4 {
         margin-right: 2rem;
         font-weight: 700;
-        font-size: 3rem;
+        font-size: 1.8rem;
+        @include screen(large) {
+          margin-right: 2rem;
+          font-weight: 700;
+          font-size: 3rem;
+        }
       }
     }
     &-details:nth-child(1) {
-      width: 51%;
-      margin-right: 1.5rem;
+      @include screen(medder) {
+        width: 51%;
+        margin-right: 1.5rem;
+      }
     }
     &-details:nth-child(2) {
-      width: 49%;
-      margin-left: 1.5rem;
+      @include screen(medder) {
+        width: 49%;
+        margin-left: 1.5rem;
+      }
     }
   }
   &__trending {
     &-images {
-      width: 80%;
       display: flex;
-      @include screen (custom, max, 1441px ){
-         justify-content: space-between;
+      width: 70%;
+      @include screen (menner){
+        width: 80%;
+      }
+      @include screen(custom, max, 1441px) {
+        justify-content: space-between;
       }
     }
     &-header {
-      +div {
+      + div {
         display: flex;
         align-items: center;
-        button{
-          width: 18%;
+        button {
+          @include screen (menner){
+            width: 18%;
+          }
         }
       }
     }
@@ -190,15 +216,25 @@ export default {
       width: 100%;
     }
   }
+  &__report {
+    height: 50vh;
+  }
 }
 h6 {
   margin-bottom: 2.5rem;
-  font-weight: 800;
-  font-size: 1.8rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  @include screen(large) {
+    font-weight: 800;
+    font-size: 1.8rem;
+  }
 }
 article {
   margin-top: 2.5rem;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   border: 1px solid #c4c4c4;
+  @include screen (menner){
+      padding: 3rem 2rem;
+  }
 }
 </style>

@@ -1,31 +1,37 @@
 <template>
   <aside class="sidebar">
     <div class="sidebar__brand">
-    <div
-      class="sidebar__close"
-      @click="$emit('sidebar-close')"
-    >
-      <svg
-        width="16"
-        height="16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#F1F2F8"
-          d="M2.065.454l13.89 13.89-1.112 1.11L.954 1.565z"
-        />
-        <path
-          fill="#F1F2F8"
-          d="M.954 14.343L14.844.454l1.11 1.11-13.889 13.89z"
-        />
-      </svg>
-    </div>
-      <img  class="logo" :src="require('@/assets/gemnote-logo.png')" alt="Gemnote name and logo" srcset="">
+      <div class="sidebar__close" @click="$emit('sidebar-close')">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#F1F2F8"
+            d="M2.065.454l13.89 13.89-1.112 1.11L.954 1.565z"
+          />
+          <path
+            fill="#F1F2F8"
+            d="M.954 14.343L14.844.454l1.11 1.11-13.889 13.89z"
+          />
+        </svg>
+      </div>
+      <img
+        class="logo"
+        :src="require('@/assets/gemnote-logo.png')"
+        alt="Gemnote name and logo"
+        srcset=""
+      />
       <h5 class="sidebar__user">Ashley Wong</h5>
     </div>
     <ul class="sidebar__nav">
-      <nav-item v-for="(option, index) in options" :title="option" :key="index"/>
+      <nav-item
+        v-for="(option, index) in options"
+        :title="option"
+        :key="index"
+      />
     </ul>
   </aside>
 </template>
@@ -36,29 +42,50 @@ export default {
   },
   data () {
     return {
-      options: ['Dashboard', 'Orders', 'Send a gift', 'Users', 'Integrations', 'Settings', 'Logout']
+      options: [
+        'Dashboard',
+        'Orders',
+        'Send a gift',
+        'Users',
+        'Integrations',
+        'Settings',
+        'Logout'
+      ]
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.sidebar{
-  width: 20%;
+.sidebar {
   /* height: 100%; */
+  width: 50%;
   padding-top: 5vh;
   min-height: 100vh;
   background-color: $primary-color;
-  &__brand{
-    padding-left: 5rem;
-    padding-right: 7rem;
+  @include screen (menner){
+    width: 20%;
   }
-  &__close{
+  &__brand {
+    padding-left: 3rem;
     @include screen (menner){
-      display: none;
-      margin-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 5rem;
+    }
+    @include screen(large) {
+      padding-left: 5rem;
+      padding-right: 7rem;
     }
   }
-  &__user{
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    padding-right: 1rem;
+    @include screen(menner) {
+      display: none;
+    }
+  }
+  &__user {
     color: $white;
     font-size: 2rem;
     font-weight: $font-bold;
@@ -67,9 +94,11 @@ export default {
     border-bottom: 1px solid $secondary-color;
   }
 }
-.logo{
-  width: 100%;
+.logo {
+  width: 80%;
   margin-bottom: 4rem;
+  @include screen (menner){
+    width: 100%;
+  }
 }
-
 </style>

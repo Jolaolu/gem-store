@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <sidebar
-      class="sidebar"
-      :class="[hamburger ? 'sidebar__open' : '']"
-      @sidebar-close="hamburger = false"
-    />
+    <transition name="fade">
+      <sidebar
+        class="sidebar"
+        :class="[hamburger ? 'sidebar__open' : '']"
+        @sidebar-close="hamburger = false"
+      />
+    </transition>
     <main :class="{ main: hamburger }">
       <navbar @sidebar-open="hamburger = true" />
       <router-view></router-view>
@@ -35,12 +37,14 @@ export default {
   display: flex;
 }
 main {
-  width: 80%;
-  padding-top: 6rem;
-
+  width: 100%;
+  @include screen(custom, min, 577) {
+    padding-top: 6rem;
+    width: 80%;
+  }
   @include screen(menner) {
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
   @include screen(larger) {
     padding-left: 10rem;
@@ -51,15 +55,16 @@ main {
   z-index: 0;
   display: absolute;
 }
-.sidebar__open {
-  display: block;
-  z-index: 999;
-  position: fixed;
-}
 .sidebar {
   top: 0;
   bottom: 0;
-  @include screen(min) {
+  @include screen(custom, max, 576) {
+    display: none;
   }
+}
+.sidebar__open {
+  display: block !important;
+  z-index: 999;
+  position: fixed;
 }
 </style>

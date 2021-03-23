@@ -34,7 +34,10 @@ export default {
   }
   &-bg {
     width: 0.2rem;
-    margin-right: 5rem;
+    margin-right: 3rem;
+    @include screen (large){
+      margin-right: 5rem;
+    }
   }
   &-title{
     letter-spacing: .05rem;
