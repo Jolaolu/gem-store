@@ -118,11 +118,9 @@ export default {
       }
       &__total {
         width: 42%;
-        padding-right: 0.5rem;
         border-right: 1px solid #c4c4c4;
         @include screen(larger) {
-          padding-left: 1rem;
-          width: 45%;
+          width: 47%;
         }
         h6 {
           margin-bottom: 2.5rem;
@@ -140,19 +138,19 @@ export default {
         div {
           display: flex;
           align-items: flex-end;
-          justify-content: space-around;
+          justify-content: space-between;
           @include screen(medder) {
             align-items: flex-start;
           }
         }
       }
       &__circle {
-        width: 45%;
+        width: 40%;
         display: flex;
         align-items: center;
       }
       &__current {
-        @include screen(large) {
+        @include screen(menner) {
           display: inline-grid;
           display: -ms-inline-grid;
           display: -moz-inline-grid;
@@ -162,6 +160,7 @@ export default {
         }
         div {
           display: flex;
+          align-items: center;
         }
       }
       h4 {
@@ -171,7 +170,7 @@ export default {
         @include screen(large) {
           margin-right: 2rem;
           font-weight: 700;
-          font-size: 3rem;
+          font-size: 3.5rem;
         }
       }
     }

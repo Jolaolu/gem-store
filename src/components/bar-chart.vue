@@ -39,6 +39,22 @@ export default {
         maintainAspectRatio: false,
         legend: {
           display: false
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ]
         }
       }
     }
@@ -52,6 +68,4 @@ export default {
   width: 100%;
 }
 </style>
-{
-
-},
+{ },

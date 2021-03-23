@@ -22,7 +22,6 @@ export default {
   computed: {
     link: function () {
       let link = ''
-      console.log(this.title.toLowerCase())
       // eslint-disable-next-line eqeqeq
       if (this.title.toLowerCase() == 'send a gift') {
         link = 'send-gift'
