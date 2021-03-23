@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '@/views/home.vue'
+import Home from '@/views/home.vue'
 
 const Dashboard = () => import('@/views/dashboard')
 Vue.use(VueRouter)
@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 const routes = [{
   path: '/',
   name: 'Home',
-  // component: Home,
+  component: Home,
   redirect: { name: 'Dashboard' },
   children: [
     {
