@@ -44,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar{
   width: 20%;
-  height: 100%;
+  /* height: 100%; */
   padding-top: 5vh;
   min-height: 100vh;
   background-color: $primary-color;

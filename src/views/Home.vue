@@ -36,21 +36,30 @@ export default {
 }
 main {
   width: 80%;
-  padding-left: 10rem;
-   padding-right: 10rem;
-  padding-top: 7rem;
+  padding-top: 6rem;
+
+  @include screen(menner) {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  @include screen(larger) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
 .main {
   z-index: 0;
   display: absolute;
 }
-.sidebar__open{
+.sidebar__open {
   display: block;
   z-index: 999;
-  position: fixed
+  position: fixed;
 }
 .sidebar {
   top: 0;
-  @include screen (min){}
+  bottom: 0;
+  @include screen(min) {
+  }
 }
 </style>
