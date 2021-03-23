@@ -80,7 +80,7 @@ export default {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 3rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
     @include screen(menner) {
       display: none;
     }
@@ -105,11 +105,9 @@ export default {
   border: none;
   background: transparent;
   color: $white;
-  margin-left: 3rem;
-  @include screen(large) {
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-left: 5rem;
-  }
+  margin-left: 3.3rem;
+  font-weight: 700;
+  padding: 0;
+  font-size: 1.6rem;
 }
 </style>

@@ -31,7 +31,7 @@ export default {
       width: 100%;
       height: 100%;
       content: "";
-      animation: active 0.5s ease-in;
+      animation: active 0.2s ease-in;
       background-color: $primary-color;
     }
   }
