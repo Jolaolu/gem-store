@@ -33,6 +33,7 @@
         :key="index"
       />
     </ul>
+    <button class="logout">Logout</button>
   </aside>
 </template>
 <script>
@@ -48,8 +49,7 @@ export default {
         'Send a gift',
         'Users',
         'Integrations',
-        'Settings',
-        'Logout'
+        'Settings'
       ]
     }
   }
@@ -62,14 +62,14 @@ export default {
   padding-top: 5vh;
   min-height: 100vh;
   background-color: $primary-color;
-  @include screen (menner){
+  @include screen(menner) {
     width: 20%;
   }
   &__brand {
     padding-left: 3rem;
-    @include screen (menner){
-    padding-left: 3rem;
-    padding-right: 5rem;
+    @include screen(menner) {
+      padding-left: 3rem;
+      padding-right: 5rem;
     }
     @include screen(large) {
       padding-left: 5rem;
@@ -97,8 +97,19 @@ export default {
 .logo {
   width: 80%;
   margin-bottom: 4rem;
-  @include screen (menner){
+  @include screen(menner) {
     width: 100%;
+  }
+}
+.logout {
+  border: none;
+  background: transparent;
+  color: $white;
+  margin-left: 3rem;
+  @include screen(large) {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-left: 5rem;
   }
 }
 </style>

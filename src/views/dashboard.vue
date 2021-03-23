@@ -189,7 +189,6 @@ export default {
     }
   }
   &__trending {
-    display: flex;
     &-images {
       display: flex;
       width: 70%;

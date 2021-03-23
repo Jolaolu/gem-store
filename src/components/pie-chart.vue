@@ -15,7 +15,7 @@ export default {
         labels: ['Bags', 'Jackets'],
         datasets: [
           {
-            backgroundColor: ['#00D8FF', '#25282a'],
+            backgroundColor: ['#c4c4c4', '#25282a'],
             data: [40, 60]
           }
         ]

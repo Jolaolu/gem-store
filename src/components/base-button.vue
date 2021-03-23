@@ -17,6 +17,8 @@ export default {
   max-height: 4rem;
   padding: 1rem;
   border: 1px solid $primary-color;
+  will-change: color, background-color;
+  transition: .5s all ease-in;
   @include screen(large) {
     font-size: 1.3rem;
     font-weight: 600;
@@ -24,6 +26,10 @@ export default {
   @include screen(larger) {
     font-size: 1.5rem;
     font-weight: 700;
+  }
+  &:hover{
+   color: $white;
+   background-color: $primary-color;
   }
 }
 </style>
