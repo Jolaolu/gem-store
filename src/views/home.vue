@@ -58,6 +58,8 @@ main {
 .sidebar {
   top: 0;
   bottom: 0;
+  height: 100%;
+  position: sticky;
   @include screen(custom, max, 576) {
     display: none;
   }
