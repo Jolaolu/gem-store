@@ -15,6 +15,7 @@
 <style lang="scss" scoped>
 nav {
   @include screen(custom, max, 576) {
+    display: block;
     width: 100%;
     height: 4rem;
     background: $primary-color;
@@ -24,6 +25,9 @@ nav {
 button {
   border: none;
   background: transparent;
+  @include screen (menner){
+    display: none
+  }
 }
 
 </style>

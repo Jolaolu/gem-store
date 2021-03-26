@@ -109,5 +109,9 @@ export default {
   font-weight: 700;
   padding: 0;
   font-size: 1.6rem;
+  margin-top: .5rem;
+  @include screen (menner){
+    margin-left: 5.2rem;
+  }
 }
 </style>
